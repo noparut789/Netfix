@@ -1,0 +1,231 @@
+/* Reset styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* สไตล์พื้นฐาน */
+body {
+    font-family: Arial, sans-serif;
+    background-color: black;
+    color: white;
+    margin: 0;
+}
+
+/* Header */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #141414;
+}
+
+.logo {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #e50914;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+}
+
+nav ul li {
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 1rem;
+}
+
+nav ul li a:hover {
+    text-decoration: underline;
+}
+
+/* Featured Section */
+.featured {
+    position: relative;
+    text-align: center;
+    padding: 50px 20px;
+    overflow: hidden; /* ป้องกันส่วนที่เกิน */
+}
+
+.featured h1 {
+    font-size: 3rem;
+    margin-bottom: 10px;
+    z-index: 2;
+    position: relative;
+}
+
+.featured p {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+    z-index: 2;
+    position: relative;
+}
+
+.featured button {
+    margin: 10px;
+    padding: 10px 20px;
+    font-size: 1rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    background-color: #e50914;
+    color: white;
+    z-index: 2;
+    position: relative;
+}
+
+.featured button:hover {
+    background-color: #f6121d;
+}
+
+/* วิดีโอพื้นหลัง */
+.featured video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 0;
+    opacity: 0.4; /* ความจาง */
+}
+
+.featured::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5); /* มืดเล็กน้อย */
+    z-index: 1;
+}
+
+/* Recently Added Section */
+.recently-added {
+    padding: 20px;
+}
+
+.recently-added h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    text-align: left;
+    padding-left: 20px;
+}
+
+.movies {
+    display: flex;
+    gap: 15px;
+    overflow-x: auto;
+    padding: 0 20px;
+}
+
+.movies img {
+    width: 150px;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 5px;
+    transition: transform 0.3s;
+}
+
+.movies img:hover {
+    transform: scale(1.1);
+}
+
+/* ซ่อน scrollbar */
+.movie-row-container {
+    overflow: hidden; /* ซ่อน scrollbar */
+}
+
+.movie-row {
+    display: flex;
+    overflow: hidden; /* ซ่อน scrollbar */
+    transition: transform 0.5s ease; /* เพิ่มการเลื่อนลื่นไหล */
+}
+
+.movies {
+    overflow-x: hidden; /* ซ่อน scrollbar แนวนอน */
+    overflow-y: hidden; /* ซ่อน scrollbar แนวตั้ง */
+}
+
+
+/* ตั้งค่าพื้นฐาน */
+/* ซ่อนเฉพาะ Scrollbar แนวนอน */
+body {
+    overflow-x: hidden; /* ซ่อน Scrollbar แนวนอน */
+    overflow-y: auto; /* เปิด Scrollbar แนวตั้ง */
+}
+
+
+/* หัวข้อหมวดหมู่ */
+.movie-section h2 {
+    font-size: 1.5rem;
+    margin: 20px 20px 10px;
+}
+
+.slider-container {
+    position: relative;
+    width: 100%;
+    margin-bottom: 20px;
+    overflow: hidden; /* ซ่อนส่วนที่เกิน */
+}
+
+.movie-row-container {
+    width: 960px; /* 150px x 6 รูป + 10px (ระยะห่าง) x 5 */
+    overflow: hidden; /* ซ่อนรูปที่เกิน */
+    margin: auto;
+}
+
+.movie-row {
+    display: flex;
+    transition: transform 0.5s ease; /* การเคลื่อนไหวลื่น */
+}
+
+.movie-row img {
+    width: 150px;
+    height: 200px;
+    margin-right: 10px;
+    object-fit: cover;
+    border-radius: 5px;
+    flex-shrink: 0; /* ป้องกันการย่อ */
+}
+
+.arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    cursor: pointer;
+    padding: 10px;
+    font-size: 2rem;
+    border-radius: 50%;
+    z-index: 10;
+}
+
+.left-arrow {
+    left: 10px;
+}
+
+.right-arrow {
+    right: 10px;
+}
+
+.movie-row img:hover {
+    transform: scale(1.1); /* ขยายภาพ 10% */
+    transition: transform 0.3s; /* เพิ่มความลื่นไหลในการขยาย */
+}
+
+
+
+
+

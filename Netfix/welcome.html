@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Who's Watching?</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="profile-container">
+        <h1>Who's Watching?</h1>
+        <div class="profiles">
+            <div class="profile" onclick="selectProfile('Tom')">
+                <img src="https://scontent.fbkk22-1.fna.fbcdn.net/v/t39.30808-6/434329635_1077986750156608_3634631616589075225_n.jpg?_nc_cat=100&ccb=1-7&_nc_sid=6ee11a&_nc_ohc=nXnQsT8i1iMQ7kNvgEYZ_1Y&_nc_zt=23&_nc_ht=scontent.fbkk22-1.fna&_nc_gid=AT9J96eHcAnB0OmMDbsgbL-&oh=00_AYBnlpZ2m-duXIfXoHxOyp9Jn9u7JC0a8HLnebC3aYxdZQ&oe=6752BD6E" alt="Tom">
+                <p>North</p>
+            </div>
+            <div class="profile" onclick="selectProfile('Jerry')">
+                <img src="https://scontent.fbkk22-8.fna.fbcdn.net/v/t39.30808-6/441416751_1402107857139507_669129549626130445_n.jpg?_nc_cat=108&ccb=1-7&_nc_sid=6ee11a&_nc_ohc=Vq0Y3eZ5zl8Q7kNvgEcmpYF&_nc_zt=23&_nc_ht=scontent.fbkk22-8.fna&_nc_gid=AQCMGrwUei0FgSn_6DRsMdq&oh=00_AYCcLY2H6m0lLoDy1cpJN1odnd-OJm6dS1Il6kXgK68qJw&oe=6752E944" alt="Jerry">
+                <p>PanPan</p>
+            </div>
+            <div class="profile" onclick="selectProfile('Harry')">
+                <img src="https://scontent.fbkk22-2.fna.fbcdn.net/v/t39.30808-6/439222923_2799108853579874_4433232185372104984_n.jpg?_nc_cat=105&ccb=1-7&_nc_sid=833d8c&_nc_ohc=_jh9hazBNdkQ7kNvgGj8MJp&_nc_zt=23&_nc_ht=scontent.fbkk22-2.fna&_nc_gid=A-wYlaX4fZl7fd64qAhs0TI&oh=00_AYCch7GmGDt52JjKdJlj1yJBtDeBRWrdSLwegb_TKtSoxw&oe=6752D489" alt="Harry">
+                <p>New</p>
+            </div>
+            <div class="profile" onclick="selectProfile('Jolie')">
+                <img src="https://scontent.fbkk22-2.fna.fbcdn.net/v/t39.30808-6/414388086_1789034038232533_2080081505568098015_n.jpg?_nc_cat=106&ccb=1-7&_nc_sid=6ee11a&_nc_ohc=__xjJzKc2BwQ7kNvgENhMgY&_nc_zt=23&_nc_ht=scontent.fbkk22-2.fna&_nc_gid=AY2R4Al_uARGglvxZ9nglsV&oh=00_AYDHnuU25spgiefTwF_HLrXi81V2XjbOHnF3kUzx4fG2BA&oe=6752C3AC" alt="Jolie">
+                <p>Bank</p>
+            </div>
+            <div class="profile" onclick="selectProfile('Raquel')">
+                <img src="https://scontent.fbkk22-2.fna.fbcdn.net/v/t1.15752-9/462641845_539690035562636_7279383085976886089_n.jpg?_nc_cat=105&ccb=1-7&_nc_sid=9f807c&_nc_ohc=-Iz4zBYdSGwQ7kNvgGdmzQE&_nc_zt=23&_nc_ht=scontent.fbkk22-2.fna&oh=03_Q7cD1QFb9USdxCsFOt33nIZkrKl7BtCO1oj1KKW0LDSaJZ1LOA&oe=67748C09" alt="Raquel">
+                <p>Oak</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal -->
+    <div id="pinModal" class="modal">
+        <div class="modal-content">
+            <h2>Enter your PIN to access this profile.</h2>
+            <div class="pin-inputs">
+                <input type="password" maxlength="1" id="pin1" oninput="moveToNext(this, 'pin2')">
+                <input type="password" maxlength="1" id="pin2" oninput="moveToNext(this, 'pin3')">
+                <input type="password" maxlength="1" id="pin3" oninput="moveToNext(this, 'pin4')">
+                <input type="password" maxlength="1" id="pin4" oninput="submitPIN()">
+            </div>
+            <div class="modal-actions">
+                <a href="#" class="link">Forgot PIN?</a>
+                <button onclick="closeModal()">Cancel</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
+
+<div id="pinModal" class="modal">
+    <div class="modal-content">
+        <h2>Enter your PIN</h2>
+        <div class="pin-inputs">
+            <input type="password" maxlength="1" id="pin1" oninput="moveToNext(this, 'pin2')" />
+            <input type="password" maxlength="1" id="pin2" oninput="moveToNext(this, 'pin3')" />
+            <input type="password" maxlength="1" id="pin3" oninput="moveToNext(this, 'pin4')" />
+            <input type="password" maxlength="1" id="pin4" oninput="submitPIN()" />
+        </div>
+        <div class="modal-actions">
+            <button onclick="closeModal()">Cancel</button>
+        </div>
+    </div>
+</div>

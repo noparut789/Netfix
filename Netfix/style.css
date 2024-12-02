@@ -1,0 +1,435 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: black;
+    color: white;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.background-images {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    overflow: hidden;
+}
+
+.image-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    width: 100%; /* ครอบคลุมพื้นที่หน้าจอ */
+    height: 100%;
+    transform: rotate(-5deg); /* จัดองศาพื้นหลัง */
+    opacity: 0.8; /* ทำให้จางเล็กน้อย */
+    filter: brightness(65%); /* ลดแสงให้ดูชัดขึ้น */
+}
+
+.image-container img {
+    width: 150px; /* ขยายขนาดรูป */
+    margin: 5px; /* ระยะห่างระหว่างรูป */
+    border-radius: 5px; /* มุมโค้ง */
+    transform: rotate(calc(-10deg + 20deg * var(--rotation))); /* จัดองศารูป */
+    transition: transform 0.3s, opacity 0.3s;
+}
+
+.image-container img:hover {
+    transform: scale(1.1);
+    filter: brightness(85%);
+}
+
+.login-container {
+    position: relative;
+    z-index: 2;
+    background-color: rgba(0, 0, 0, 0.85);
+    padding: 30px;
+    border-radius: 10px;
+    width: 400px;
+    text-align: center;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.5);
+}
+
+.logo {
+    font-size: 36px;
+    color: #e50914;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.form-group {
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+.form-group label {
+    font-size: 14px;
+    display: block;
+    margin-bottom: 5px;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #444;
+    border-radius: 4px;
+    background-color: #333;
+    color: white;
+    font-size: 14px;
+}
+
+.error {
+    color: #e50914;
+    font-size: 12px;
+    margin-top: 5px;
+    display: none;
+}
+
+.login-btn {
+    background-color: #e50914;
+    color: white;
+    padding: 10px;
+    width: 100%;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+.login-btn:hover {
+    background-color: #f6121d;
+}
+
+.extra-options {
+    margin-top: 15px;
+}
+
+.secondary-btn {
+    background-color: #555;
+    color: white;
+    padding: 10px;
+    width: 100%;
+    border: none;
+    border-radius: 4px;
+    font-size: 14px;
+    cursor: pointer;
+    margin-bottom: 10px;
+}
+
+.secondary-btn:hover {
+    background-color: #777;
+}
+
+.link {
+    font-size: 14px;
+    color: #bbb;
+    text-decoration: none;
+}
+
+.link:hover {
+    text-decoration: underline;
+}
+
+.remember-me {
+    margin-top: 10px;
+    font-size: 14px;
+}
+
+input[type="checkbox"] {
+    margin-right: 10px;
+}
+
+/* รีเซ็ตค่าเบื้องต้น */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* พื้นฐาน Body */
+body {
+    font-family: Arial, sans-serif;
+    background-color: black;
+    color: white;
+    height: 100vh;
+    margin: 0;
+    display: flex;
+    flex-direction: column; /* จัดเรียงแนวตั้ง */
+    align-items: center;
+    justify-content: flex-start; /* ข้อความและรูปเริ่มจากบน */
+    overflow: hidden;
+}
+
+/* Container สำหรับข้อความ "Who's Watching?" */
+.profile-container h1 {
+    font-size: 5rem; /* ขนาดใหญ่ */
+    color: white;
+    margin-top: 10px; /* ระยะห่างจากขอบบน */
+    margin-bottom: 30px; /* ระยะห่างจากรูป */
+    text-align: center;
+}
+
+/* Container สำหรับ Profiles */
+.profiles {
+    display: flex;
+    justify-content: center; /* วางตำแหน่งให้อยู่ตรงกลาง */
+    gap: 40px; /* ระยะห่างระหว่างรูป */
+    flex-wrap: wrap; /* รองรับหน้าจอขนาดเล็ก */
+    margin-bottom: 30px; /* เพิ่มระยะห่างจากขอบล่าง */
+}
+
+/* สไตล์ของแต่ละ Profile */
+.profile {
+    text-align: center;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.profile:hover {
+    transform: scale(1.1); /* ขยายเมื่อวางเมาส์ */
+}
+
+.profile img {
+    width: 150px; /* ขนาดรูปใหญ่พอดี */
+    height: 150px; /* ขนาดเท่ากัน */
+    border-radius: 10px; /* มุมโค้งมน */
+    border: 2px solid white;
+}
+
+.profile p {
+    margin-top: 20px;
+    font-size: 1.2rem; /* ขนาดตัวอักษร */
+    color: white;
+}
+
+/* Modal styles */
+.modal {
+    display: none; /* ซ่อน modal */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6); /* พื้นหลังมืด */
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.modal-content {
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    width: 90%;
+    max-width: 300px;
+    text-align: center;
+}
+
+h2 {
+    font-size: 18px;
+    margin-bottom: 20px;
+    color: black;
+}
+
+.pin-inputs {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.pin-inputs input {
+    width: 40px;
+    height: 40px;
+    text-align: center;
+    font-size: 18px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.modal-actions {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.modal-actions a {
+    color: #007BFF;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.modal-actions button {
+    background-color: #ccc;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.modal-actions button:hover {
+    background-color: #aaa;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: black;
+    color: white;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Container สำหรับหัวข้อ Who's Watching */
+.profile-container h1 {
+    font-size: 2.5rem; /* ปรับขนาดตัวอักษร */
+    margin-bottom: 30px; /* เพิ่มระยะห่างด้านล่าง */
+    margin-top: 20px; /* ระยะห่างจากขอบด้านบน */
+    text-align: center; /* จัดให้อยู่ตรงกลาง */
+    color: white;
+}
+
+/* Container สำหรับโปรไฟล์ */
+.profiles {
+    display: flex;
+    justify-content: center; /* จัดให้อยู่ตรงกลาง */
+    gap: 30px; /* ระยะห่างระหว่างแต่ละโปรไฟล์ */
+    flex-wrap: wrap; /* หากพื้นที่ไม่พอ ให้จัดเป็นหลายแถว */
+}
+
+/* โปรไฟล์แต่ละอัน */
+.profile {
+    text-align: center;
+    cursor: pointer;
+    transition: transform 0.3s ease; /* เพิ่มแอนิเมชันเมื่อวางเมาส์ */
+}
+
+.profile:hover {
+    transform: scale(1.1); /* ขยายเมื่อวางเมาส์ */
+}
+
+.profile img {
+    width: 200px; /* ขนาดของรูป */
+    height: 200px;
+    border-radius: 10px; /* มุมโค้งมน */
+    border: 2px solid white;
+}
+
+.profile p {
+    margin-top: 10px;
+    font-size: 1.1rem; /* ขนาดตัวอักษร */
+    color: white;
+}
+
+/* Modal */
+.modal {
+    display: none; /* ซ่อน modal เป็นค่าเริ่มต้น */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8); /* พื้นหลังโปร่งแสง */
+    justify-content: center; /* จัดให้อยู่กลางแนวนอน */
+    align-items: center; /* จัดให้อยู่กลางแนวตั้ง */
+    z-index: 1000; /* เลเยอร์ที่อยู่บนสุด */
+}
+
+/* Modal Content */
+.modal-content {
+    background: white; /* พื้นหลังสีขาว */
+    padding: 20px;
+    border-radius: 10px; /* มุมโค้งมน */
+    width: 300px;
+    text-align: center; /* จัดข้อความให้อยู่กลาง */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* เงาเบาๆ */
+}
+
+.modal-content h2 {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+}
+
+.pin-inputs {
+    display: flex;
+    justify-content: center;
+    gap: 10px; /* ระยะห่างระหว่าง input */
+    margin-bottom: 20px;
+}
+
+.pin-inputs input {
+    width: 40px;
+    height: 40px;
+    text-align: center;
+    font-size: 1.2rem;
+    border: 2px solid #ccc;
+    border-radius: 5px;
+}
+
+.pin-inputs input:focus {
+    border-color: #e50914; /* สีแดงเมื่อคลิก */
+    outline: none;
+}
+
+.modal-actions {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 10px;
+}
+
+.modal-actions a {
+    color: #007bff;
+    text-decoration: none;
+    font-size: 0.9rem;
+}
+
+.modal-actions a:hover {
+    text-decoration: underline;
+}
+
+.modal-actions button {
+    background-color: #e50914;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+.modal-actions button:hover {
+    background-color: #f6121d;
+}
+
+
